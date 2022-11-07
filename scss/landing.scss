@@ -1,0 +1,183 @@
+@use "./partials/global" as *;
+
+/* Hero */
+.hero {
+    background-color: $nitro-pink;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 6rem;
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        width: 30%;
+
+        a {
+            color: $white;
+        }
+    }
+}
+
+
+/* Product Section */
+
+.products {
+    background-color: $light-gray;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+    width: 100%;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__group {
+        display: flex;
+        justify-content: space-between;
+        width: 76%;
+    }
+
+    &__button {
+        color: $white;
+    }
+}
+
+/* Product cards */
+
+.product-card {
+
+    margin: 20px;
+    min-width: 330px;
+    max-width: 350px;
+    min-height: 440px;
+    max-height: 460px;
+    background-color: $white;
+    box-shadow: 0 5px 9px -1px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    &__picture {
+        height: 80%;
+        padding: 1rem;
+    }
+
+    &__content {
+        background-color: $nitro-pink;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        padding: 2rem 1rem;
+    }
+
+    &__name {
+        font-size: 2rem;
+    }
+
+    &__subtitle {
+        color: $text-alternate;
+    }
+
+    &__price {
+        color: $nitro-blue;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+}
+
+/* We're different section */
+
+.diff {
+    padding: 5%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    
+    &__content {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    &__image {
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem;
+        border: 0.5rem solid $nitro-blue;
+        position: relative;
+        & img:hover {
+            animation-name: rotate;
+            animation-duration:2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+    // not sure how to animate picture with hovering parent
+    &__image::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: translate3d(1rem, 1rem, 0);
+        height: 102%;
+        width: 102%;
+        background-image: url(../assets/images/coldbrewbackground.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    @keyframes rotate {
+        0% {transform: rotate(0deg);}
+        100% {transform:rotate(360deg);}
+    
+    }
+    
+    &__title {}
+    
+    &__text {}
+    
+    &__content-icons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content-icon {
+        height: 3rem;
+    }
+}
+
+/* Discount Section */
+.discount__banner {
+    margin: 10rem 5rem;
+    padding: 2.5rem;
+    background-color: $graphite;
+    animation-name: flash;
+    animation-duration:2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.discount__text {
+    text-align: center;
+    font-size: 2.8rem;
+    color: $white;
+    margin-top: 0;
+}
+
+@keyframes flash {
+    0%{ background-color:$graphite}
+    50% {background-color:$nitro-blue}
+    100% {background-color:$graphite}
+    
+}

@@ -1,0 +1,168 @@
+/* colors */
+
+$nitro-blue: #5BACC3;
+$nitro-pink: #FFF0ED;
+$graphite: #393939;
+$light-gray: #F7F7F7;
+$white: #fff;
+$gray: #909090;
+
+
+$text-primary: $graphite;
+$text-secondary:$white;
+$text-highlight: $nitro-blue;
+$text-alternate: $gray;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* typography */
+body {
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
+
+h1,
+h2 {
+    font-size: 3.75rem;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1s.1rem;
+}
+
+li {
+    font-size: 1.3rem;
+    font-weight: 400;
+    list-style: none;
+    padding-left: 1rem;
+}
+
+a {
+    text-decoration: none;
+    &:link,
+    &:visited {
+    }    
+}
+// button ::after cant have background in background...
+.button {
+    display: inline-block;
+    min-width: 180px;
+    max-width: 50%;
+    padding: 1.2rem 0;
+    font-size: 1.3rem;
+    text-align: center;
+    color: $white;
+    position: relative;
+    text-decoration: none;
+    background-color: $nitro-blue;
+    &::before {
+        content: " ";
+        position: absolute;
+        border: 3px solid $graphite;
+        top:0;
+        left:0;
+        transform: translate3d(-5px, -5px, 0);
+        height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        
+    }
+    &:active::before{
+    transform: translate3d(0, 0, 0);
+    
+    }
+
+}
+
+
+
+
+.icon {
+    min-width: 3.1rem;
+    max-width: 7.5rem;
+}
+
+.background-icon {
+    min-width: 60px;
+    max-width: 120px;
+    opacity: 25%;
+
+}
+
+.image {
+    min-height: 15rem;
+    height: 100%;
+    max-height: 34.4rem;
+}
+
+header{    padding: 2rem;
+    padding-left: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: $nitro-pink;
+    position:relative;
+
+}
+.header{
+    &__logo {
+        display: flex;
+    }
+    &__menu {
+        display:flex;
+    }
+    &__menu-item a{
+        color: $text-primary;
+    }
+    &__menu-item:last-of-type a {
+    color: $nitro-blue;
+    }
+
+}
+
+
+footer {
+    @extend header;
+    justify-content: space-around;
+    &::before{
+        background-image:url(../assets/logos/coffee-beans-logo-and-footer.svg);
+        background-size: 10rem;
+        background-repeat: no-repeat;
+        opacity: 25%;
+        content: " ";
+        position: absolute;
+        top:0;
+        left:0;
+        transform: translate3d(-3rem, 1rem, 0);
+        height: 74%;
+        width: 43%;
+    }
+    &::after{
+        background-image:url(../assets/logos/coffee-beans-logo-and-footer.svg);
+        background-size: 10rem;
+        background-repeat: no-repeat;
+        opacity: 25%;
+        content: " ";
+        position: absolute;
+        top:0;
+        right:0;
+        transform: translate3d(4rem, 2rem, 0);
+        height: 74%;
+        width: 11%;
+    }
+}
+
